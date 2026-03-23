@@ -1,0 +1,4 @@
+Original array:
+9 8 2 6 1 
+Sorted array:
+1 2 6 8 9 
