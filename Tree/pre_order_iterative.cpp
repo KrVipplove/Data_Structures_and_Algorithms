@@ -30,6 +30,9 @@ Node* binaryTree(vector<int>& preorder){
     return temp;
 }
 
+
+// METHOD 1 (using stack)
+/*
 vector<int> preOrder(Node* root){
     vector<int> ans;
 
@@ -46,6 +49,34 @@ vector<int> preOrder(Node* root){
 
         if(temp->right) s.push(temp->right);
         if(temp->left) s.push(temp->left);
+    }
+    return ans;
+}
+*/
+
+// METHOD 2 (MORRIS TRAVERSAL)
+vector<int> preOrder(Node* root){
+    vector<int> ans;
+    if(!root) return ans;
+
+    while(root){
+        if(!root->left){
+            ans.push_back(root->data);
+            root = root->right;
+        }else{
+            Node* temp = root->left;
+            while(temp->right && temp->right != root){
+                temp = temp->right;
+            }
+            if(temp->right == nullptr){
+                ans.push_back(root->data);
+                temp->right = root;
+                root = root->left;
+            }else{
+                temp->right = nullptr;
+                root = root->right;
+            }
+        }
     }
     return ans;
 }
