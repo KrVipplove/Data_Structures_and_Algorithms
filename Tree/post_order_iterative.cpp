@@ -31,6 +31,9 @@ Node* binaryTree(vector<int>& preorder){
     return temp;
 }
 
+
+// MEHTOD 1 (using stack)
+/*
 vector<int> postOrder(Node* root){
     vector<int> ans;
     if(!root) return ans;
@@ -50,6 +53,36 @@ vector<int> postOrder(Node* root){
 
     reverse(ans.begin(), ans.end());
 
+    return ans;
+}
+*/
+
+
+// METHOD 2 (MORRIS TRAVERSAL modified)
+vector<int> postOrder(Node* root){
+    vector<int> ans;
+    if(!root) return ans;
+
+    while(root){
+        if(!root->right){
+            ans.push_back(root->data);
+            root = root->left;
+        }else{
+            Node* temp = root->right;
+            while(temp->left && temp->left != root){
+                temp = temp->left;
+            }
+            if(temp->left == nullptr){
+                ans.push_back(root->data);
+                temp->left = root;
+                root = root->right;
+            }else{
+                temp->left = nullptr;
+                root = root->left;
+            }
+        }
+    }
+    reverse(ans.begin(), ans.end());
     return ans;
 }
 
