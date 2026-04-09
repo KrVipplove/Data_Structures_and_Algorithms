@@ -75,10 +75,22 @@ Node* binaryTree(vector<int>& preorder){
     return temp;
 }
 
+void printPreorder(Node* root){
+    if(!root) return;
+
+    cout<<root->data<<" ";
+    printPreorder(root->left);
+    printPreorder(root->right);
+}
+
 int main(){
-    vector<int> preorder = {1, 2, 4, -1, -1, 5, -1, -1, 3, -1, 6, 7, -1, -1, 8, -1, -1};;
+    vector<int> preorder = {1, 2, 4, -1, -1, 5, -1, -1, 3, -1, 6, 7, -1, -1, 8, -1, -1};
 
     Node* root = binaryTree(preorder);
+
+    cout<<"Preorder of created binary tree: ";
+    printPreorder(root);
+    cout<<endl;
 
     return 0;
 }
