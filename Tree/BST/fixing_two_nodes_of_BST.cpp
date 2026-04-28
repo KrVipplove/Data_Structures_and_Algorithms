@@ -1,6 +1,6 @@
 // Q. Given the root of a Binary search tree(BST), where exactly two nodes were swapped by mistake. Your task is to fix (or correct) the BST by swapping them back. Do not change the structure of the tree.
 
-// NOTE: construction of tree is proceeding with max and min val so wrong tree creation may happen with wrong input;
+// NOTE: wrong tree creation is not possible in tree creation with preorder (min, max) method;
 
 #include <iostream>
 #include <vector>
@@ -148,7 +148,7 @@ void printInorder(Node* root){
 }
 
 int main(){
-    vector<int> preorder = {8, 13, 1, 6, 4, 7, 10, 14, 3};
+    vector<int> preorder = {8, 3, 1, 6, 4, 7, 10, 14, 13};
 
     int idx = 0;
     Node* root = createBSTpreorder(preorder, idx, INT_MIN, INT_MAX);
