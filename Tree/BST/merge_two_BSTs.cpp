@@ -13,7 +13,18 @@ class Node {
     }
 };
 
+Node* createBSTpreorder(vector<int>& preorder, int& idx, int minVal, int maxVal){
+    if(idx >= preorder.size() || preorder[idx] <= minVal || preorder[idx] >= maxVal){
+        return nullptr;
+    }
 
+    Node* root = new Node(preorder[idx++]);
+
+    root->left = createBSTpreorder(preorder, idx, minVal, root->data);
+    root->right = createBSTpreorder(preorder, idx, root->data, maxVal);
+
+    return root;
+}
 
 // METHOD 1 (TC -> O(n), SC->O(n+m))
 /*
@@ -119,5 +130,19 @@ vector<int> merge(Node* root1, Node* root2){
 }
 
 int main(){
-    
+    vector<int> preorder1 = {8, 2, 1, 10};
+    vector<int> preorder2 = {5, 3, 0};
+
+    int idx1 = 0, idx2 = 0;
+    Node* root1 = createBSTpreorder(preorder1, idx1, INT_MIN, INT_MAX);
+    Node* root2 = createBSTpreorder(preorder2, idx2, INT_MIN, INT_MAX);
+
+    vector<int> ans = merge(root1, root2);
+    cout<<"Inorder after merging two BSTs: ";
+    for(int val : ans){
+        cout<<val<<" ";
+    }
+    cout<<endl;
+
+    return 0;
 }
