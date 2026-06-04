@@ -3,7 +3,9 @@
 #include <set>
 using namespace std;
 
+// set: sorted and unique elements
 
+/*
 int main(){
     // SET stores only unique elements in sorted order
 
@@ -46,12 +48,17 @@ int main(){
 
     return 0;
 }
+*/
 
 
 class Person{
 public:
     string name;
     int age;
+
+    bool operator < (const Person& other) const{
+        return age < other.age;
+    }
 
 };
 
@@ -60,13 +67,17 @@ int main(){
 
     Person p1, p2, p3, p4;
     p1.name = "Vipplove", p1.age = 22;
-    p2.name = "Vishwajeet", p2.age = 22;
-    p3.name = "Riya", p3.age = 22;
-    p4.name = "Sanskriti", p4.age = 22;
+    p2.name = "Vishwajeet", p2.age = 19;
+    p3.name = "Riya", p3.age = 20;
+    p4.name = "Sanskriti", p4.age = 21;
 
     s.insert(p1);
     s.insert(p2);
     s.insert(p3);
     s.insert(p4);
+
+    for(auto it = s.begin(); it != s.end(); it++){
+        cout<<"Name: "<<it->name<<", Age: "<<it->age<<endl;
+    }
 
 }
