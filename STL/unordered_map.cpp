@@ -5,6 +5,7 @@ using namespace std;
 // unique keys are present
 // data may not be sorted
 // hashing implementation
+// insertion, search, deletion are performed in O(1) time complexity
 
 int main(){
     unordered_map<int,int> m;

@@ -2,6 +2,8 @@
 #include <unordered_map>
 using namespace std;
 
+// follows the properties of unordered_map with duplicates in it
+
 int main(){
     unordered_multimap<int, int> m;
 
