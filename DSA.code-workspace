@@ -1,0 +1,16 @@
+{
+	"folders": [
+		{
+			"path": "DSA"
+		},
+		{
+			"path": "todos-list"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "todos-list",
+		"files.associations": {
+			"vector": "cpp"
+		}
+	}
+}

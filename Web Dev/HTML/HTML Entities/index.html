@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML-Entities</title>
+</head>
+<body>
+    <h1>HTML - Entities</h1>
+
+    <p>HTML entities are special codes used to display reserved or special characters in HTML.</p>
+
+    <p>Because some characters have special meaning in HTML, you can’t type them directly.</p>
+
+    <p>Example:</p>
+
+    <ul>
+        <li>Tag for writing paragraph in HTML - &lt;p&gt;&lt;/p&gt;</li>
+
+        <li>For displaying entities itself is to replace '&' with '&amp;amp;'</li>
+    </ul>
+
+    <p>Example of entities:</p>
+    <ul>
+        <li>(&amp;lt;) for (&lt;)</li>
+        <li>(&amp;gt;) for (&gt;)</li>
+        <li>(&amp;amp;) for (&amp;)</li>
+        <li>(&amp;copy;) for (&copy;)</li>
+        <li>(&amp;nbsp;) for non-breaking space (space that cannot break into a new line)</li>
+    </ul>
+
+
+    <h3>pre Tag</h3>
+
+    <p>&lt;pre&gt; displays text exactly as you write it in your HTML.</p>
+
+    <p>Input:</p>
+
+    <pre>&lt;pre&gt;
+        I  love      you
+
+        I    miss
+
+        you so 
+
+
+        much
+&lt;/pre&gt;
+    </pre>
+
+
+    <p>Output:</p>
+    <pre>
+        I  love      you
+
+        I    miss
+
+        you so
+
+
+        much
+    </pre>
+
+    <h3>&amp;nbsp; (for non-breaking space):</h3>
+
+    <p>Copyright&nbsp;&copy;&nbsp;kumar vipplove</p>
+    <p>we can use multiple &amp;nbsp;</p>
+
+<br>
+    <h3>code tag</h3>
+    <p>&lt;code&gt; is used to write code and &lt;pre&gt;&lt;code&gt is used to write multiline code.</p>
+    <pre>
+        <code>
+Code for reversing string:
+
+    void reverseString(string&amp; s){
+        stack&lt;int&gt; st;
+    
+        for(int i=0; i&lt;s.size(); i++){
+            st.push(s[i]);
+        }
+    
+        int i=0;
+        while(!st.empty()){
+            s[i] = st.top();
+            st.pop();
+            i++;
+        }
+    }
+        </code>
+    </pre>
+
+</body>
+</html>
