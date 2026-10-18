@@ -38,8 +38,8 @@ public:
         int largest = idx;
 
 
-        if(left < size && arr[left] > arr[idx]) largest = left;
-        if(right < size && arr[right] > arr[idx]) largest = right;
+        if(left < size && arr[left] > arr[largest]) largest = left;
+        if(right < size && arr[right] > arr[largest]) largest = right; 
 
         if(largest != idx){
             swap(arr[largest], arr[idx]);

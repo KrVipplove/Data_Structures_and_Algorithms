@@ -22,7 +22,7 @@ void buildMaxHeap(vector<int>& arr, int n){
 }
 
 void printHeap(vector<int>& arr, int n){
-    cout<<"Heap: ";
+    cout<<"Max Heap: ";
     for(int i=0; i<n; i++){
         cout<<arr[i]<<" ";
     }
