@@ -7,7 +7,7 @@ int partition(vector<int>& nums, int start, int end){
     int pos = start;
     for(int i=start; i<end; i++){
         if(nums[i]<=nums[end]){
-            swap(nums[i], nums[pos]);
+            swap(nums[i], nums[pos]); 
             pos++;
         }
     }
