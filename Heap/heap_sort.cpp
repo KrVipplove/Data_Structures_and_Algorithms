@@ -29,6 +29,14 @@ void heap_sort(vector<int>& nums, int n){
     }
 }
 
+void printArray(vector<int>& nums, int n){
+    cout<<"Array: ";
+    for(int i=0; i<n; i++){
+        cout<<nums[i]<<" ";
+    }
+    cout<<endl;
+}
+
 int main(){
     int n;
     cout<<"Enter the size of the array: ";
@@ -41,4 +49,6 @@ int main(){
     }
 
     build_maxHeap(nums, n);
+    heap_sort(nums, n);
+    printArray(nums, n);
 }
